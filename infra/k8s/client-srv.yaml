@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-srv
+  labels:
+    name: client-srv
+    tier: backend
+spec:
+  type: LoadBalancer
+  ports:
+  - name: client-srv
+    protocol: TCP
+    port: 80
+    targetPort: 3000
+  selector:
+    name: client-pod
+    tier: frontend
