@@ -20,4 +20,6 @@ spec:
     spec:
       containers:
       - name: client-container
-        image: rhapsodyx021/clinic-app-client:1.0
+        image: localhost:5000/clinic-app-client
+        ports:
+        - containerPort: 3000

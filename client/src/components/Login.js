@@ -33,7 +33,7 @@ const Login = (props) => {
     }
 
     const onClickSSO = () => {
-        window.location = 'http://localhost:5000/user/auth/callback';
+        window.location = `http://${process.env.REACT_APP_HOSTNAME}/user/auth/callback`;
         
     }
     

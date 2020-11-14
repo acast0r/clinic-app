@@ -15,12 +15,12 @@ export default {
 
     // },
     logout: () => {
-        return fetch('/user/auth/logout')
+        return fetch('http://tip-clinic.ml/user/auth/logout')
                 .then(res => res.json())
                 .then(data => data)
     },
     isAuthenticated: () => {
-        return fetch('/user/auth/me')
+        return fetch('http://tip-clinic.ml/user/auth/me')
                 .then(res => {
                     if(res.status !== 401) 
                         return res.json().then(data => data);

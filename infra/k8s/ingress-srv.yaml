@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-srv
+spec:
+  rules:
+    - host: tip-clinic.ml
+      http:
+        paths:
+          - path: /user/auth/callback
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/auth/me
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/auth/logout
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/register
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/login
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/logout
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/admin
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /user/authenticated
+            backend:
+              serviceName: server-login-srv
+              servicePort: 4000
+          - path: /
+            backend:
+              serviceName: client-srv
+              servicePort: 3000
+          

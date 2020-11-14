@@ -34,7 +34,7 @@ userRouter.get('/auth/callback', passport.authenticate('openidconnect', {session
     res.cookie('access_token', accessToken, {httpOnly: true, sameSite: true});
     // res.status(200).json({isAuthenticated: true, user: {username: req.user.username, role: req.user.role}})
    
-    res.redirect('http://client-srv:3000');
+    res.redirect('http://tip-clinic.ml');
 });
 
 userRouter.get('/auth/me', (req, res) => {
