@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: ingress-srv
 spec:
+  tls:
+    - secretName: tip-clinic-ml-tls
+      hosts:
+      - tip-clinic.ml
   rules:
     - host: tip-clinic.ml
       http:
