@@ -2,11 +2,10 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
-  tls:
-    - secretName: tip-clinic-ml-tls
-      hosts:
-      - tip-clinic.ml
   rules:
     - host: tip-clinic.ml
       http:
@@ -43,7 +42,7 @@ spec:
             backend:
               serviceName: server-login-srv
               servicePort: 4000
-          - path: /
+          - path: /?(.*)
             backend:
               serviceName: client-srv
               servicePort: 3000

@@ -1,6 +1,6 @@
 export default {
     login: user => {
-        return fetch('/user/login', {
+        return fetch('http://tip-clinic.ml/user/login', {
             method: "post",
             body: JSON.stringify(user),
             headers: {
@@ -15,7 +15,7 @@ export default {
 
     },
     register: user => {
-        return fetch('/user/register', {
+        return fetch('http://tip-clinic.ml/user/register', {
             method: "post",
             body: JSON.stringify(user),
             headers: {
@@ -25,12 +25,12 @@ export default {
           .then(data => data)
     },
     logout: () => {
-        return fetch('/user/logout')
+        return fetch('http://tip-clinic.ml/user/logout')
                 .then(res => res.json())
                 .then(data => data)
     },
     isAuthenticated: () => {
-        return fetch('/user/authenticated')
+        return fetch('http://tip-clinic.ml/user/authenticated')
                 .then(res => {
                     if(res.status !== 401) 
                         return res.json().then(data => data);

@@ -2,24 +2,30 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: client-depl
-  labels:
-    name: client-depl
-    tier: frontend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      name: client-pod
-      tier: frontend
+      app: client-pod
   template:
     metadata:
       name: client-pod
       labels:
-        name: client-pod
-        tier: frontend
+        app: client-pod
     spec:
       containers:
       - name: client-container
-        image: rhapsodyx021/clinic-app-client:2.0
-        ports:
-        - containerPort: 3000
+        image: localhost:5000/clinic-app-client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-srv
+spec:
+  selector:
+    app: client-pod
+  ports:
+  - name: client-pod
+    protocol: TCP
+    port: 3000
+    targetPort: 3000

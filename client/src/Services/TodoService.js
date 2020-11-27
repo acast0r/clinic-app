@@ -1,6 +1,6 @@
 export default {
     getTodos: () => {
-        return fetch('/user/todos')
+        return fetch('http://tip-clinic.ml/user/todos')
                 .then(res => {
                     if(res.status !== 401){
                         return res.json().then(data => data);
@@ -10,7 +10,7 @@ export default {
                 });
     },
     createTodo: todo => {
-        return fetch('/user/todo', {
+        return fetch('http://tip-clinic.ml/user/todo', {
             method: 'post',
             body: JSON.stringify(todo),
             headers: {
