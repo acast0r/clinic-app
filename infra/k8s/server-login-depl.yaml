@@ -6,7 +6,7 @@ metadata:
     name: server-login-depl
     tier: backend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       name: server-login-pod
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: server-login-container
-        image: localhost:5000/clinic-app-server
+        image: rhapsodyx021/clinic-app-server-login:1.7
         ports:
         - containerPort: 4000

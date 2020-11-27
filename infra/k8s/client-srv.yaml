@@ -6,7 +6,7 @@ metadata:
     name: client-srv
     tier: frontend
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - name: client-srv
     protocol: TCP

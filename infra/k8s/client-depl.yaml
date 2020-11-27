@@ -6,7 +6,7 @@ metadata:
     name: client-depl
     tier: frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       name: client-pod
@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: client-container
-        image: localhost:5000/clinic-app-client
+        image: rhapsodyx021/clinic-app-client:1.9
         ports:
         - containerPort: 3000
