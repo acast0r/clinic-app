@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: server-login-container
-        image: rhapsodyx021/clinic-app-server-login:1.7
+        image: rhapsodyx021/clinic-app-server-login:2.0
         ports:
         - containerPort: 4000
