@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: server-login-container
-        image: localhost:5000/clinic-app-server
+        image: rhapsodyx021/clinic-app-server
 ---
 apiVersion: v1
 kind: Service
