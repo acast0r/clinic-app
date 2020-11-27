@@ -33,7 +33,7 @@ const Login = (props) => {
     }
 
     const onClickSSO = () => {
-        window.location = `http://tip-clinic.ml/user/auth/callback`;
+        window.location = `http://${window.location.hostname}/user/auth/callback`;
         
     }
     
