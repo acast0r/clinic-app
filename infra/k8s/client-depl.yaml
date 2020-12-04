@@ -22,10 +22,11 @@ kind: Service
 metadata:
   name: client-srv
 spec:
+  type: LoadBalancer
   selector:
     app: client-pod
   ports:
   - name: client-pod
     protocol: TCP
-    port: 3000
+    port: 80
     targetPort: 3000

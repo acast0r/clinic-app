@@ -22,6 +22,7 @@ kind: Service
 metadata:
   name: server-login-srv
 spec:
+  type: ClusterIP
   selector:
     app: server-login-pod
   ports:

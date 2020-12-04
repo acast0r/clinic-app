@@ -32,9 +32,9 @@ userRouter.get('/auth/callback', passport.authenticate('openidconnect', {session
     sso.name = req.user.name;
     sso.token = accessToken;
     res.cookie('access_token', accessToken, {httpOnly: false, sameSite: true});
-    res.status(200).json({isAuthenticated: true, user: {username: req.user.username, role: req.user.role}})
+    // res.status(200).json({isAuthenticated: true, user: {username: req.user.username, role: req.user.role}})
    
-    // res.redirect(`http://${window.location.hostname}`);
+    res.redirect(`http://${window.location.hostname}`);
 });
 
 userRouter.get('/auth/me', (req, res) => {
